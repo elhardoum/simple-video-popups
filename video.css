@@ -6,8 +6,9 @@
   right: 0;
   width: 100%;
   height: 100%;
+  background: #666;
   background: rgba(0, 0, 0, 0.44);
-  background: #666; }
+  font-family: 'Open Sans', sans-serif; }
   .video-player-popup.v-hidden, .video-player-popup .v-hidden {
     display: none; }
   .video-player-popup.v-visible, .video-player-popup .v-visible {
@@ -24,11 +25,12 @@
     font-size: 55px;
     color: #fff; }
   .video-player-popup .video-heading {
-    background: #ddd;
+    background: #cecece;
     margin: 0;
-    padding: 7px 0; }
+    padding: 7px 0;
+    color: #555; }
     .video-player-popup .video-heading span {
-      padding: 0 7px; }
+      padding: 0 10px; }
   .video-player-popup .vjs-fullscreen {
     position: relative !important;
     top: 0 !important;

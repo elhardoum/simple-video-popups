@@ -4,32 +4,31 @@
     <title>Sum Video</title>
     <link href="http://vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
     <link href="video.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
 
-<button class="video-player"
-    data-video-mp4="video.mp4"
-    data-video-heading="Made with Blender"
-    data-video-setting-max-height="700"
->Play Sum Video</button>
-<button class="video-player" data-video-mp4="video.mp4">Play Sum Video</button>
+<p style="text-align:center">
+    <button class="video-player" data-video-mp4="video.mp4">Video with no heading</button>
 
-<!-- <video
-    id="my-player"
-    class="video-js"
-    controls
-    preload="auto"
-    poster="//vjs.zencdn.net/v/oceans.png"
-    data-setup='{}'>
-  <source src="video.mp4" type="video/mp4"></source>
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="http://videojs.com/html5-video-support/" target="_blank">
-      supports HTML5 video
-    </a>
-  </p>
-</video> -->
+    <button class="video-player"
+        data-video-mp4="video.mp4"
+        data-video-heading="Made with Blender"
+    >Video with heading</button>
+
+    <button class="video-player"
+        data-video-mp4="video.mp4"
+        data-video-heading="Made with Blender"
+        data-video-setting-max-height="700"
+    >Video with heading, full height</button>
+
+    <button class="video-player"
+        data-video-mp4="video.mp4"
+        data-video-heading="Made with Blender"
+        data-video-setting-max-height="700"
+        data-video-setting-max-width="1200"
+    >Video with heading, full height, large width</button>
+</p>
 
 <script src="http://vjs.zencdn.net/5.19/video.min.js"></script>
 <script src="video.js"></script>

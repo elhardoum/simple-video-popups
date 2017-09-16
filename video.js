@@ -219,16 +219,16 @@
         var width, videoContainer, buttonSettings, height, heightInt
           , videoHeading, subtractHeight = 0;
 
-        if ( window.innerWidth < settings.maxWidth ) {
+        buttonSettings = getSettings( getPopupAssociatedButton(popup) );
+
+        if ( window.innerWidth < buttonSettings.maxWidth ) {
             width = window.innerWidth;
         } else {
-            width = settings.maxWidth;
+            width = buttonSettings.maxWidth;
         }
 
         videoContainer = getPopupVideoContainer(popup);
-
         videoContainer.style.width = width + 'px';
-        buttonSettings = getSettings( getPopupAssociatedButton(popup) );
 
         if ( buttonSettings['maxHeight'] < window.innerHeight ) {
             height = parseInt(buttonSettings['maxHeight'])
