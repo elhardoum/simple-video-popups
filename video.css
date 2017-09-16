@@ -1,4 +1,8 @@
-.video-player-popup {
+body.video-noscroll, html.video-noscroll {
+  height: 100%;
+  overflow-y: hidden; }
+
+body .video-player-popup, html .video-player-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,29 +13,34 @@
   background: #666;
   background: rgba(0, 0, 0, 0.44);
   font-family: 'Open Sans', sans-serif; }
-  .video-player-popup.v-hidden, .video-player-popup .v-hidden {
+  body .video-player-popup.v-hidden, body .video-player-popup .v-hidden, html .video-player-popup.v-hidden, html .video-player-popup .v-hidden {
     display: none; }
-  .video-player-popup.v-visible, .video-player-popup .v-visible {
+  body .video-player-popup.v-visible, body .video-player-popup .v-visible, html .video-player-popup.v-visible, html .video-player-popup .v-visible {
     display: block; }
-  .video-player-popup.pos-relative, .video-player-popup .pos-relative {
+  body .video-player-popup.pos-relative, body .video-player-popup .pos-relative, html .video-player-popup.pos-relative, html .video-player-popup .pos-relative {
     position: relative !important; }
-  .video-player-popup.pos-absolute, .video-player-popup .pos-absolute {
+  body .video-player-popup.pos-absolute, body .video-player-popup .pos-absolute, html .video-player-popup.pos-absolute, html .video-player-popup .pos-absolute {
     position: absolute !important; }
-  .video-player-popup .close-video {
+  body .video-player-popup .close-video, html .video-player-popup .close-video {
     cursor: pointer;
     position: absolute;
     top: -10px;
     right: 6px;
     font-size: 55px;
     color: #fff; }
-  .video-player-popup .video-heading {
-    background: #cecece;
+  body .video-player-popup .video-heading, html .video-player-popup .video-heading {
+    background: #4F4F47;
     margin: 0;
     padding: 7px 0;
-    color: #555; }
-    .video-player-popup .video-heading span {
+    color: #fff;
+    position: relative; }
+    body .video-player-popup .video-heading span, html .video-player-popup .video-heading span {
       padding: 0 10px; }
-  .video-player-popup .vjs-fullscreen {
+    body .video-player-popup .video-heading .close-video, html .video-player-popup .video-heading .close-video {
+      padding: 0;
+      right: 11px;
+      top: -13px; }
+  body .video-player-popup .vjs-fullscreen, html .video-player-popup .vjs-fullscreen {
     position: relative !important;
     top: 0 !important;
     left: 0 !important; }
