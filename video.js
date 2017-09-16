@@ -243,6 +243,10 @@
 
         videoContainer.style.height = height + 'px';
 
+        try {
+            videoContainer.offsetTop = videoContainer.getBoundingClientRect().top
+        } catch (e) {}
+
         if ( popup.scrollHeight > window.innerHeight ) {
             height = window.innerHeight -videoContainer.offsetTop
             videoContainer.style.height = height + 'px';
@@ -312,20 +316,21 @@
         var popup, videoContainer;
 
         if ( popup = currentDisplayedVideoPopup() ) {
-            setTimeout(positionPopup, 1, popup)
-            positionPopup(popup);
+            videoContainer = getPopupVideoContainer(popup);
 
-            // if ( popup._videoJS ) {
-            //     videoContainer = getPopupVideoContainer(popup);
-            //     if ( /vjs-fullscreen/.test(videoContainer.className) ) {
-            //         setTimeout(function(videoContainer){
-            //             if ( !/vjs-fullscreen/.test(videoContainer.className) ) {
-            //                 return positionCurrentDisplayedPopup();
-            //             }
-            //         }, 1, videoContainer);
-            //         positionCurrentDisplayedPopup();
-            //     }
-            // }
+            if ( videoContainer.getBoundingClientRect().top <= 0 )
+                return;
+
+            if ( popup._videoJS ) {
+                if ( /vjs-fullscreen/.test(videoContainer.className) ) {
+                    setTimeout(function(videoContainer){
+                        if ( !/vjs-fullscreen/.test(videoContainer.className) ) {
+                            return positionCurrentDisplayedPopup();
+                        }
+                    }, 1, videoContainer);
+                    positionCurrentDisplayedPopup();
+                }
+            }
 
             return positionPopup(popup);
         }
